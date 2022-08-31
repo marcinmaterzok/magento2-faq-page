@@ -1,0 +1,32 @@
+<?php
+use Mtrzk\FaqPage\Block\Faq\Faqpage;
+use Magento\Framework\Escaper;
+
+/** @var Faqpage $block */
+/** @var Escaper $escaper */
+
+$questions = $block->getFaqQuestions();
+?>
+<div class="faqpage-container">
+
+    <?php foreach($questions as $question): ?>
+        <div class="faqpage-box">
+            <div class="faqpage-question">
+                <?= $escaper->escapeHtml($question->getQuestion()) ?>
+            </div>
+
+            <div class="faqpage-answer">
+                <?= /** @noEscape  */ $question->getAnswer() ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<script>
+    document.querySelectorAll('.collapse_title').forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.target.classList.toggle('active');
+            e.target.parentElement.querySelector('.collapse_list').classList.toggle('hidden');
+        });
+    });
+</script>

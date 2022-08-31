@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mtrzk_faqpage>
+            <general>
+                <is_enabled>1</is_enabled>
+                <add_to_menu>1</add_to_menu>
+                <faq_menu_name>FAQ</faq_menu_name>
+             </general>
+        </mtrzk_faqpage>
+    </default>
+</config>

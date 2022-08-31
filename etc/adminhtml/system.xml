@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mtrzk_modules"  translate="label" sortOrder="100">
+            <label>MTRZK</label>
+        </tab>
+        <section id="mtrzk_faqpage" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>FAQ Page</label>
+            <tab>mtrzk_modules</tab>
+            <resource>Mtrzk_FaqPage::faqpage</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="is_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Is Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="add_to_menu" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Add to menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="mtrzk_faqpage/general/is_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="faq_menu_name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>FAQ Menu Name</label>
+                    <depends>
+                        <field id="mtrzk_faqpage/general/add_to_menu">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

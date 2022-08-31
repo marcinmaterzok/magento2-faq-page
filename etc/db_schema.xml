@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mtrzk_faqpage_question" resource="default" engine="innodb" comment="FaqPage Question">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="FaqPage ID"/>
+        <column xsi:type="varchar" name="question" nullable="false" length="255" comment="Answer"/>
+        <column xsi:type="text" name="answer" nullable="true" comment="Answer"/>
+        <column xsi:type="int" name="position" nullable="true" default="0" comment="Position"/>
+        <column xsi:type="varchar" name="store_ids" nullable="false" default="0"  length="255" comment="Store IDs"/>
+        <column xsi:type="boolean" name="active" default="true" comment="Active"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

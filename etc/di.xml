@@ -1,0 +1,31 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Mtrzk\FaqPage\Api\QuestionRepositoryInterface" type="Mtrzk\FaqPage\Model\QuestionRepository"/>
+    <preference for="Mtrzk\FaqPage\Api\Data\QuestionInterface" type="Mtrzk\FaqPage\Model\Question"/>
+    <preference for="Mtrzk\FaqPage\Api\Data\QuestionSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mtrzk_faqpage_question_listing_data_source" xsi:type="string">
+                    Mtrzk\FaqPage\Model\ResourceModel\Question\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Mtrzk\FaqPage\Model\QuestionRepository">
+        <arguments>
+            <argument name="collectionProcessor"
+                      xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Mtrzk\FaqPage\Ui\Component\Question\DataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="name" xsi:type="string">mtrzk_faqpage_question_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mtrzk_FaqPage::question" title="FAQ Page - Question" module="Mtrzk_FaqPage"
+             sortOrder="15" action="mtrzk_faqpage/question" resource="Mtrzk_FaqPage::question"
+             parent="Magento_Backend::content"/>
+    </menu>
+</config>

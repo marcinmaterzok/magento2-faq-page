@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Marcin Materzok - MTRZK Sp. z o .o. All rights reserved.
+ * Copyright © Marcin Materzok - MTRZK Sp. z o .o. (MIT License)
  * See LICENSE_MTRZK for license details.
  */
 
@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Mtrzk\FaqPage\Block\Faq;
 
 use Magento\Framework\Api\SearchCriteriaBuilder;
+use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
@@ -48,7 +49,8 @@ class FaqPage extends Template
      *
      * @return QuestionInterface[]
      */
-    public function getFaqQuestions($onlyActive = true): array {
+    public function getFaqQuestions($onlyActive = true): array
+    {
 
         /** @var Collection $collection */
         $collection = $this->collectionFactory->create();
@@ -65,7 +67,7 @@ class FaqPage extends Template
             ]
         );
 
-        $collection->setOrder('position','ASC');
+        $collection->setOrder(QuestionInterface::POSITION, SortOrder::SORT_ASC);
 
         return $collection->getItems();
     }

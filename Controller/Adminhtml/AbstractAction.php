@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Marcin Materzok - MTRZK Sp. z o .o.  All rights reserved.
+ * Copyright © Marcin Materzok - MTRZK Sp. z o .o.  (MIT License)
  * See LICENSE_MTRZK for license details.
  */
 

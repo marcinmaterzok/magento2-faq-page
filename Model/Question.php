@@ -141,13 +141,41 @@ class Question extends AbstractModel implements QuestionInterface, IdentityInter
         return $this->setData(self::ANSWER, $answer);
     }
 
+    /**
+     * @return bool
+     */
     public function isActive(): bool
     {
-        // TODO: Implement isActive() method.
+        return (bool) $this->_getData(self::ACTIVE);
     }
 
+    /**
+     * @param bool $active
+     *
+     * @return QuestionInterface
+     */
     public function setActive(bool $active): QuestionInterface
     {
-        // TODO: Implement setActive() method.
+        return $this->setData(self::ACTIVE, $active);
+    }
+
+    /**
+     * @return array
+     */
+    public function getStoreIds(): array
+    {
+        return (array) explode(",", $this->_getData(selfSTORE_IDSACTIVE));
+    }
+
+    /**
+     * @param array $storeIds
+     *
+     * @return QuestionInterface
+     */
+    public function setStoreIds(array $storeIds): QuestionInterface
+    {
+        $storeIds = implode(",", $storeIds);
+
+        return $this->setData(self::STORE_IDS, $storeIds);
     }
 }

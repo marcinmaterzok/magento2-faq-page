@@ -67,6 +67,18 @@ interface QuestionInterface
     public function setPosition(?int $position): QuestionInterface;
 
     /**
+     * @return array
+     */
+    public function getStoreIds(): array;
+
+    /**
+     * @param array $storeIds
+     *
+     * @return QuestionInterface
+     */
+    public function setStoreIds(array $storeIds): QuestionInterface;
+
+    /**
      * @return bool
      */
     public function isActive(): bool;

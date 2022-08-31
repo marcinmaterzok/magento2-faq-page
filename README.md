@@ -26,7 +26,14 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy
 ```
 
-## CHANGELOG
+## 3. CHANGELOG
+
+Version 1.0.4
+
+```
+- Fixed getData on StoresIds
+```
+
 Version 1.0.1
 
 ```

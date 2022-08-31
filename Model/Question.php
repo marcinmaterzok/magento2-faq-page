@@ -164,7 +164,7 @@ class Question extends AbstractModel implements QuestionInterface, IdentityInter
      */
     public function getStoreIds(): array
     {
-        return (array) explode(",", $this->_getData(selfSTORE_IDSACTIVE));
+        return (array) explode(",", $this->_getData(self::STORE_IDS));
     }
 
     /**

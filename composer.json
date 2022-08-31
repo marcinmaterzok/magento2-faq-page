@@ -5,7 +5,7 @@
     ],
     "description": "Magento 2 module for manage FaqPage",
     "type": "magento2-module",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "require": {
         "php": ">=7.4",
         "magento/framework": "*"
